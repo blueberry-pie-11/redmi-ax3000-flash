@@ -1,1 +1,1 @@
-# redmi-ax3000-flash
+### redmi-ax3000（cr8808）分区文件
