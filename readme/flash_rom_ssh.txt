@@ -6,32 +6,32 @@
 大分区不死界面刷入教程,本教程使用CR8806进行
 （勇者专属区，翻车自负）
 ==============================================
-第一步，按照上面的TTL教程刷入op
-第二步，使用putty，ssh方式连接op
+第1步，按照上面的TTL教程刷入op
+第2步，使用putty，ssh方式连接op
 
-第三步，输入命令cat /proc/mtd确认分区信息
+第3步，输入命令cat /proc/mtd确认分区信息
 
 确认好mtd1 mtd11 mtd12和对应刷入文件是否正确
 （为什么要确认？因为集客好像是反的！）
 
-第四步，使用winscp上传MIBIB.bin文件到/tmp/
+第4步，使用winscp上传MIBIB.bin文件到/tmp/
 
-第五步，输入mtd erase /dev/mtd1（清除mtd1分区数据）
+第5步，输入mtd erase /dev/mtd1（清除mtd1分区数据）
 
-第六步，输入mtd write /tmp/MIBIB.bin /dev/mtd1（MIBIB.bin写入到mtd1）
+第6步，输入mtd write /tmp/MIBIB.bin /dev/mtd1（MIBIB.bin写入到mtd1）
 
 ---------------------------------------------------------------------
 mtd erase /dev/mtd1
 mtd write /tmp/MIBIB.bin /dev/mtd1
 ---------------------------------------------------------------------
 
-第七步，确认写入无报错，直接拔电！等两秒后插入电源，等op启动完成
+第7步，确认写入无报错，直接拔电！等两秒后插入电源，等op启动完成
 
-第八步，继续用puttty登录ssh
+第8步，继续用puttty登录ssh
 
-第九步，继续用winscp把APPSBL.bin APPSBL1.bin文件上传到/tmp/
+第9步，继续用winscp把APPSBL.bin APPSBL1.bin文件上传到/tmp/
 
-第十步，输入mtd erase /dev/mtd11（清除mtd11分区数据）
+第10步，输入mtd erase /dev/mtd11（清除mtd11分区数据）
 
 第11步，输入mtd write /tmp/APPSBL.bin /dev/mtd11（APPSBL.bin写入到mtd11）
 
@@ -72,7 +72,7 @@ mtd write /tmp/APPSBL1.bin /dev/mtd12
 
 ---------------------------------------------------------------------
 mtd erase /dev/mtd1
-mtd write /tmp/OpenWrt.mtd1.bin /dev/mtd1
+mtd write /tmp/mtd1.bin /dev/mtd1
 ---------------------------------------------------------------------
 
 第四步，确认写入无报错，直接拔电！等两秒后插入电源，等op启动完成
@@ -83,9 +83,9 @@ mtd write /tmp/OpenWrt.mtd1.bin /dev/mtd1
 
 ---------------------------------------------------------------------
 mtd erase /dev/mtd11
-mtd write /tmp/OpenWrt.mtd11.bin /dev/mtd11
+mtd write /tmp/mtd11.bin /dev/mtd11
 mtd erase /dev/mtd12
-mtd write /tmp/OpenWrt.mtd12.bin /dev/mtd12
+mtd write /tmp/mtd12.bin /dev/mtd12
 ---------------------------------------------------------------------
 
 第七步，确认写入无报错，直接拔电！
