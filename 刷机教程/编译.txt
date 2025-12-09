@@ -1,0 +1,1 @@
+ipq50xx-mainline-kernel-5.4-openwrt-21.02-qsdk
